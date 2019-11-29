@@ -22,110 +22,16 @@
                             </div>
                             <div class="col-lg-8 col-md-7 col-sm-5 col-xs-3">
                                 <nav class="main__menu__nav hidden-xs hidden-sm">
-                                    <?php
+                                  <?php
                                         wp_nav_menu(array(
-                                            'theme_location' => 'AsbabMenuLocation'
+                                        'theme_location' => 'AsbabMenuLocation',
+                                        'menu_class' => 'main__menu dropdown',
+
                                         ));
                                     ?>
-                                     <!-- <ul class="main__menu">
-                                        <li class="drop"><a href="index.html">Home</a></li>
-                                        <li class="drop"><a href="#">women</a>
-                                            <ul class="dropdown mega_dropdown">
-
-                                                <li><a class="mega__title" href="product-grid.html">Shop Pages</a>
-                                                    <ul class="mega__item">
-                                                        <li><a href="product-grid.html">Product Grid</a></li>
-                                                        <li><a href="cart.html">cart</a></li>
-                                                        <li><a href="checkout.html">checkout</a></li>
-                                                        <li><a href="wishlist.html">wishlist</a></li>
-                                                    </ul>
-                                                </li>
-
-                                                <li><a class="mega__title" href="product-grid.html">Variable Product</a>
-                                                    <ul class="mega__item">
-                                                        <li><a href="#">Category</a></li>
-                                                        <li><a href="#">My Account</a></li>
-                                                        <li><a href="wishlist.html">Wishlist</a></li>
-                                                        <li><a href="cart.html">Shopping Cart</a></li>
-                                                        <li><a href="checkout.html">Checkout</a></li>
-                                                    </ul>
-                                                </li>
-
-                                                <li><a class="mega__title" href="product-grid.html">Product Types</a>
-                                                    <ul class="mega__item">
-                                                        <li><a href="#">Simple Product</a></li>
-                                                        <li><a href="#">Variable Product</a></li>
-                                                        <li><a href="#">Grouped Product</a></li>
-                                                        <li><a href="#">Downloadable Product</a></li>
-                                                        <li><a href="#">Simple Product</a></li>
-                                                    </ul>
-                                                </li>
-
-                                            </ul>
-                                        </li>
-                                        <li class="drop"><a href="#">men</a>
-                                            <ul class="dropdown mega_dropdown">
-
-                                                <li><a class="mega__title" href="product-grid.html">Shop Pages</a>
-                                                    <ul class="mega__item">
-                                                        <li><a href="product-grid.html">Product Grid</a></li>
-                                                        <li><a href="cart.html">cart</a></li>
-                                                        <li><a href="checkout.html">checkout</a></li>
-                                                        <li><a href="wishlist.html">wishlist</a></li>
-                                                    </ul>
-                                                </li>
-
-                                                <li><a class="mega__title" href="product-grid.html">Variable Product</a>
-                                                    <ul class="mega__item">
-                                                        <li><a href="#">Category</a></li>
-                                                        <li><a href="#">My Account</a></li>
-                                                        <li><a href="wishlist.html">Wishlist</a></li>
-                                                        <li><a href="cart.html">Shopping Cart</a></li>
-                                                        <li><a href="checkout.html">Checkout</a></li>
-                                                    </ul>
-                                                </li>
-
-                                                <li><a class="mega__title" href="product-grid.html">Product Types</a>
-                                                    <ul class="mega__item">
-                                                        <li><a href="#">Simple Product</a></li>
-                                                        <li><a href="#">Variable Product</a></li>
-                                                        <li><a href="#">Grouped Product</a></li>
-                                                        <li><a href="#">Downloadable Product</a></li>
-                                                        <li><a href="#">Simple Product</a></li>
-                                                    </ul>
-                                                </li>
-
-                                            </ul>
-                                        </li>
-                                        <li class="drop"><a href="#">Product</a>
-                                            <ul class="dropdown">
-                                                <li><a href="product-grid.html">Product Grid</a></li>
-                                                <li><a href="product-details.html">Product Details</a></li>
-                                            </ul>
-                                        </li>
-                                        <li class="drop"><a href="blog.html">blog</a>
-                                            <ul class="dropdown">
-                                                <li><a href="blog.html">Blog Grid</a></li>
-                                                <li><a href="blog-details.html">Blog Details</a></li>
-                                            </ul>
-                                        </li>
-                                        <li class="drop"><a href="#">Pages</a>
-                                            <ul class="dropdown">
-                                                <li><a href="blog.html">Blog</a></li>
-                                                <li><a href="blog-details.html">Blog Details</a></li>
-                                                <li><a href="cart.html">Cart page</a></li>
-                                                <li><a href="checkout.html">checkout</a></li>
-                                                <li><a href="contact.html">contact</a></li>
-                                                <li><a href="product-grid.html">product grid</a></li>
-                                                <li><a href="product-details.html">product details</a></li>
-                                                <li><a href="wishlist.html">wishlist</a></li>
-                                            </ul>
-                                        </li>
-                                        <li><a href="contact.html">contact</a></li>
-                                    </ul> -->
                                 </nav>
 
-                                <div class="mobile-menu clearfix visible-xs visible-sm">
+                                <!-- <div class="mobile-menu clearfix visible-xs visible-sm">
                                     <nav id="mobile_dropdown">
                                         <ul>
                                             <li><a href="index.html">Home</a></li>
@@ -145,7 +51,7 @@
                                             <li><a href="contact.html">contact</a></li>
                                         </ul>
                                     </nav>
-                                </div>
+                                </div> -->
                             </div>
                             <div class="col-md-3 col-lg-2 col-sm-4 col-xs-4">
                                 <div class="header__right">
