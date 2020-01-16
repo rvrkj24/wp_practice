@@ -15,15 +15,9 @@ while(have_posts()) {
   </div>
     
   <div class="container container--narrow page-section">
-  
-  <div class="metabox metabox--position-up metabox--with-home-link">
-      <p>
-      <a class="metabox__blog-home-link" href="<?php echo get_post_type_archive_link('event'); ?>"><i class="fa fa-home" aria-hidden="true"></i> Event Home </a> 
-      <span class="metabox__main"> <?php the_title();  ?></span>
-      </p>
-    </div>
-
-  <div class="generic-content">  <?php the_content(); ?> </div>
+ 
+  <div class="generic-content">
+  <?php the_content(); ?>
 
   <?php
   
@@ -32,7 +26,7 @@ while(have_posts()) {
   //print_r($relatedPrograms); -to know the return type of variable $relatedPrograms
   if($relatedPrograms){
     echo'<hr class="section-break">';
-    echo'<h3 class="headline headline--medium">Related Program(s)</h3>';
+    echo'<h3 class="headline headline--medium">Subject(s) Taught</h3>';
     echo'<ul class="link-list min-list">';
   foreach($relatedPrograms as $program) { ?>
     
