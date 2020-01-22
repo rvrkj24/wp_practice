@@ -1,6 +1,46 @@
 <?php 
 
+function pageBanner($args = NULL){
+// php logic will live here
+
+if(!$args['title']){
+    $args['title'] = get_the_title();
+}
+
+if(!$args['subtitle']){
+    $args['subtitle'] = get_field('page_banner_subtitle');
+}
+
+if(!$args['photo']){
+    if(get_field('page_banner_background_image')) 
+    {
+        $args['photo'] = get_field('page_banner_background_image')['sizes']['pageBanner'];
+    } 
+    else
+        {
+            $args['photo'] = get_theme_file_uri('/images/ocean.jpg');
+        }
+    
+}
+
+?>
+
+<div class="page-banner">
+         <div class="page-banner__bg-image" style="background-image: url(
+            <?php echo $args['photo']; ?>);">
+         </div>
+        <div class="page-banner__content container container--narrow">
+            <h1 class="page-banner__title"><?php echo $args['title'] ?></h1>
+          <div class="page-banner__intro">
+            <p><?php echo $args['subtitle'] ?></p>
+          </div>
+        </div>  
+  </div>
+
+<?php } 
+
 function university_files() {
+    wp_enqueue_script('googleMap', '//maps.googleapis.com/maps/api/js?key=AIzaSyBh9b1rNCp6kOi5JeMHiRP4klDymBeoEWk', NULL, '1.0', true);
     wp_enqueue_script('main-university-js', get_theme_file_uri('/js/scripts-bundled.js'), NULL, microtime(), true);
     // NUll-for saying this js file has no dependency, 1.0 - says it's version, true - WP asking do you want to load this js file right before closing body tag.
     // Only for development purpose and avoid caching, in place of version number, we have added microtime() function
@@ -15,12 +55,22 @@ function university_features() {
     register_nav_menu('footerLocationOne', 'Footer Location One');
     register_nav_menu('footerLocationTwo', 'Footer Location Two');
     add_theme_support('title-tag');
+    add_theme_support('post-thumbnails');
+    add_image_size('professorLandscape', 400, 260, true);
+    add_image_size('professorPotrait', 480, 650, true);
+    add_image_size('pageBanner', 1500, 350, true);
+
+
 
 }
 
 add_action('after_setup_theme', 'university_features');
 
 function university_adjust_queries($query) {
+
+    if (!is_admin() AND is_post_type_archive('campus') AND $query->is_main_query()) {
+        $query->set('posts_per_page', -1);
+      }
 
     if(!is_admin() AND is_post_type_archive('program') AND $query->is_main_query()){
         $query->set('orderby', 'title');
@@ -52,6 +102,13 @@ function university_adjust_queries($query) {
 }
 
 add_action('pre_get_posts', 'university_adjust_queries');
+
+function universityMapKey($api) {
+    $api['key'] = 'AIzaSyBh9b1rNCp6kOi5JeMHiRP4klDymBeoEWk';
+    return $api;
+  }
+  
+  add_filter('acf/fields/google_map/api', 'universityMapKey');
 
 ?>
 
