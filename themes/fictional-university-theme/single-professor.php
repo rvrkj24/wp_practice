@@ -15,9 +15,16 @@ while(have_posts()) {
   </div>
 
   <div class="container container--narrow page-section">
-
+  <div class="row">
+  <div class="one-third">
+  <img src="<?php the_post_thumbnail(); ?>">
+  </div>
+  <div class="two-third">
+  <?php  the_content(); ?></div>
+  </div>
   <div class="generic-content">
-  <?php the_content(); ?>
+
+  <!-- <?php  the_content(); ?> -->
 
   <?php
 

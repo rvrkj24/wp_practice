@@ -1,4 +1,4 @@
-<?php 
+<?php
 
 function university_files() {
     wp_enqueue_script('main-university-js', get_theme_file_uri('/js/scripts-bundled.js'), NULL, microtime(), true);
@@ -15,6 +15,7 @@ function university_features() {
     register_nav_menu('footerLocationOne', 'Footer Location One');
     register_nav_menu('footerLocationTwo', 'Footer Location Two');
     add_theme_support('title-tag');
+    add_theme_support('post-thumbnails');
 
 }
 
@@ -48,7 +49,7 @@ function university_adjust_queries($query) {
 
 
     }
-    
+
 }
 
 add_action('pre_get_posts', 'university_adjust_queries');
